@@ -9,6 +9,47 @@ $gray:                  color(black lightness(+33.5%)); /* #555 */
 $gray-light:            color(black lightness(+46.7%)); /* #777 */
 $gray-lighter:          color(black lightness(+93.5%)); /* #eee */
 
+$green-progress: #8BF95A;
+$dark-grey-background: #1B100E;
+$dark-red-background: #520f09;
+$red-background: #AF0101;
+$red-alert: #F94534;
+$red-frame: #B00C0B;
+$golden-icon: #F7D606;
+$dark-green-icon: #022800;
+$dark-grey-frame: #484A3C;
+$grey-frame: #898E84;
+$brown-frame: #584122;
+
+$pink-text: #6D294E;
+$blue-text: #515790;
+$purple-text: #4D153A;
+$green-text: #286517;
+$crimson-text: #71271E;
+
+.background-module {
+  background: repeating-linear-gradient(
+      0deg,
+      $dark-grey-background,
+      $dark-red-background 1px,
+      $dark-grey-background 4px,
+      $dark-grey-background 4px
+  );
+  border: 8px $dark-grey-frame;
+  border-style: solid double solid double;
+  > h2 {
+    padding: 1rem;
+    margin: 0 0 0.5rem 0;
+  }
+  > p {
+    padding: 0 1rem;
+  }
+}
+
+
+
+
+
 /*
  * Typography
  * ========================================================================== */

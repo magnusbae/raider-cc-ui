@@ -9,10 +9,10 @@
 
 @import '../variables.scss';
 
-$brand-color: #61dafb;
+$brand-color: #F7D606;
 
 .root {
-  background: #373277;
+  background: #AF0101;
   color: #fff;
 }
 
@@ -39,19 +39,20 @@ $brand-color: #61dafb;
 
 .banner {
   text-align: center;
+  font-size: 0.5em;
+  text-align: left;
+  padding-left: 20px;
 }
+
 
 .bannerTitle {
   margin: 0;
-  padding: 10px;
   font-weight: normal;
-  font-size: 4em;
   line-height: 1em;
 }
 
 .bannerDesc {
   padding: 0;
   color: rgba(255, 255, 255, .5);
-  font-size: 1.25em;
   margin: 0;
 }

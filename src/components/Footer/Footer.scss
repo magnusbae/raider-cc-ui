@@ -10,11 +10,12 @@
 @import '../variables.scss';
 
 .root {
-  background: #333;
+  background: $dark-red-background;
   color: #fff;
 }
 
 .container {
+  @extend .background-module;
   margin: 0 auto;
   padding: 20px 15px;
   max-width: $max-content-width;

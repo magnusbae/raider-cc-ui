@@ -19,15 +19,13 @@ class Header extends Component {
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <Navigation className={s.nav} />
           <Link className={s.brand} to="/">
-            <img src={require('./logo-small.png')} width="38" height="38" alt="React" />
-            <span className={s.brandTxt}>Raiders of the Lost Pi</span>
+            <div className={s.banner}>
+              <h1 className={s.bannerTitle}>C&C Tunnel Raider</h1>
+              <p className={s.bannerDesc}>Tunnel inspection made autonomous</p>
+            </div>
           </Link>
-          <div className={s.banner}>
-            <h1 className={s.bannerTitle}>Tunnel Raider C&C</h1>
-            <p className={s.bannerDesc}>Tunnel inspection made autonomous</p>
-          </div>
+
         </div>
       </div>
     );
