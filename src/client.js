@@ -13,6 +13,8 @@ import FastClick from 'fastclick';
 import Router from './routes';
 import Location from './core/Location';
 import { addEventListener, removeEventListener } from './core/DOMUtils';
+import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
+import FetchFirebase from './core/fetch/fetch.firebase'
 
 let cssContainer = document.getElementById('css');
 const appContainer = document.getElementById('app');
@@ -58,6 +60,10 @@ function render(state) {
 function run() {
   let currentLocation = null;
   let currentState = null;
+
+  if(canUseDOM) {
+    FetchFirebase.init();
+  }
 
   // Make taps on links and buttons work fast on mobiles
   FastClick.attach(document.body);

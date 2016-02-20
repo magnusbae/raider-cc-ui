@@ -10,3 +10,4 @@
 export const port = process.env.PORT || 5000;
 export const host = process.env.WEBSITE_HOSTNAME || `localhost:${port}`;
 export const googleAnalyticsId = 'UA-XXXXX-X';
+export const firebaseURL = 'https://cdn.firebase.com/js/client/1.0.17/firebase.js';
