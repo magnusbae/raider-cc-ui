@@ -14,5 +14,11 @@ export default {
       data: data,
     });
   },
+  receivedHumidityData: function(data) {
+    Dispatcher.dispatch({
+      type: ActionTypes.RECEIVED_HUMIDITY_DATA,
+      data: data,
+    });
+  },
 
 };

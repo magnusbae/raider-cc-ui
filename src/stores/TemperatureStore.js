@@ -7,7 +7,7 @@ var CHANGE_EVENT = 'change';
 
 var _temperatures = [];
 var _images = [];
-
+var _humidities = [];
 
 class TemperatureStore extends EventEmitter {
 
@@ -29,6 +29,14 @@ class TemperatureStore extends EventEmitter {
 
   getLastImage() {
     return _images[_images.length - 1];
+  }
+
+  getAllHumidities() {
+    return _humidities;
+  }
+
+  getLastHumidity() {
+    return _humidities[_humidities.length - 1];
   }
 
   emitChange() {
@@ -61,6 +69,10 @@ store.dispatchToken = Dispatcher.register(function(action) {
       break;
     case ActionTypes.RECEIVED_CAMERA_DATA:
       _images.push(action.data);
+      store.emitChange();
+      break;
+    case ActionTypes.RECEIVED_HUMIDITY_DATA:
+      _humidities.push(action.data);
       store.emitChange();
       break;
     default:

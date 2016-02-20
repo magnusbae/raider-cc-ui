@@ -10,6 +10,9 @@ var FirebaseFetcher = {
   firebaseRef.child("pictures").on("child_added", function(dataSnapshot) {
     FirebaseAction.receivedCameraData(dataSnapshot.val());
   });
+  firebaseRef.child("humidity").on("child_added", function(dataSnapshot) {
+    FirebaseAction.receivedHumidityData(dataSnapshot.val());
+  });
 
   }
 } 
