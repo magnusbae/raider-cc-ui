@@ -27,16 +27,17 @@ $purple-text: #4D153A;
 $green-text: #286517;
 $crimson-text: #71271E;
 
-.background-module {
+.cc-frame-center {
   background: repeating-linear-gradient(
       0deg,
       $dark-grey-background,
-      $dark-red-background 1px,
-      $dark-grey-background 4px,
+      $dark-grey-background 1px,
+      $dark-red-background 2px,
       $dark-grey-background 4px
   );
-  border: 8px $dark-grey-frame;
-  border-style: solid double solid double;
+  border: 50px solid $dark-grey-background;
+  padding: 15px;
+  border-image: url(/cc-frame-1.png) 50 round;
   > h2 {
     padding: 1rem;
     margin: 0 0 0.5rem 0;
@@ -46,6 +47,15 @@ $crimson-text: #71271E;
   }
 }
 
+.cc-frame-left {
+  @extend .cc-frame-center;
+  border-image: url(/cc-frame-2.png) 60 round;
+}
+
+.cc-frame-right {
+  @extend .cc-frame-center;
+  border-image: url(/cc-frame-3.png) 60 round;
+}
 
 
 

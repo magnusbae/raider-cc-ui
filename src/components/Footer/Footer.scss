@@ -15,12 +15,32 @@
 }
 
 .container {
-  @extend .background-module;
   margin: 0 auto;
-  padding: 20px 15px;
-  max-width: $max-content-width;
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
+
+.ccLeft {
+  @extend .cc-frame-left;
+  width: 20%;
+}
+
+.ccCenter {
+  @extend .cc-frame-center;
+  width: 100%;
+  z-index: 2;
+  margin-left: -18px;
+  margin-right: -18px;
+}
+
+.ccRight {
+  @extend .cc-frame-right;
+  width: 20%;
+}
+
 
 .text {
   color: rgba(255, 255, 255, .5);
