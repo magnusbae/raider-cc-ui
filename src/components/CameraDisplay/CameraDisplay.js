@@ -8,6 +8,7 @@
  */
 
 import React, { Component, PropTypes } from 'react';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import emptyFunction from 'fbjs/lib/emptyFunction';
 import s from './CameraDisplay.scss';
 import Header from '../Header';
@@ -25,8 +26,11 @@ function getCameraState() {
 
 var CameraImage = React.createClass({
   render: function() {
+    let src = this.props.src
+      ? this.props.src
+      : 'data:image/jpg;base64,' + this.props.b64;
     return (
-      <img src={'data:image/jpg;base64,' + this.props.src} width="200" height="200"/>
+      <img src={src} width="200" height="200"/>
     );
   }
 });
@@ -34,11 +38,11 @@ var CameraImage = React.createClass({
 function renderLatestImage(image) {
   if (image && image.base64) {
     return (
-      <CameraImage src={image.base64} />
+      <CameraImage b64={image.base64} />
     );
   } else {
     return (
-      <p>No images received yet. Are we live?</p>
+      <CameraImage src="200_placeholder.jpg" />
     );
   }
 }
@@ -76,12 +80,12 @@ class CameraDisplay extends Component {
 
   render() {
     return !this.props.error ? (
-      <figure className={s.raiderCcCameraImage}>
+      <div className={s.raiderCcCameraImage}>
         {renderLatestImage(this.state.image)}
-      </figure>
+      </div>
     ) : (<p>An error occured</p>);
   }
 
 }
 
-export default CameraDisplay;
+export default withStyles(CameraDisplay, s);

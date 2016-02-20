@@ -35,7 +35,7 @@ $crimson-text: #71271E;
       $dark-red-background 2px,
       $dark-grey-background 4px
   );
-  border: 50px solid $dark-grey-background;
+  border: 50px solid transparent;
   padding: 15px;
   border-image: url(/cc-frame-1.png) 50 round;
   > h2 {
