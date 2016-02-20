@@ -58,8 +58,7 @@ class CameraDisplay extends Component {
   constructor(props) {
     super(props);
     this._onChange = this._onChange.bind(this);
-    this.state = getCameraState()
-    console.log(this.state);
+    this.state = getCameraState();
   }
 
   componentWillMount() {
