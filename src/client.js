@@ -14,7 +14,8 @@ import Router from './routes';
 import Location from './core/Location';
 import { addEventListener, removeEventListener } from './core/DOMUtils';
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
-import FetchFirebase from './core/fetch/fetch.firebase'
+import FetchFirebase from './core/fetch/fetch.firebase';
+import Socket from './core/socket';
 
 let cssContainer = document.getElementById('css');
 const appContainer = document.getElementById('app');
@@ -63,6 +64,7 @@ function run() {
 
   if(canUseDOM) {
     FetchFirebase.init();
+    Socket.init();
   }
 
   // Make taps on links and buttons work fast on mobiles

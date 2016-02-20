@@ -15,4 +15,5 @@ export default keyMirror({
   RECEIVED_HUMIDITY_DATA: null,
   RECEIVED_BAROMETER_DATA: null,
   RECEIVED_AMBIENT_LIGHT_DATA: null,
+  RECEIVED_SOCKET_DATA: null,
 });
