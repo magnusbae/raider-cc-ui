@@ -18,12 +18,14 @@ import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 import TempSensorDisplay from './components/TempSensorDisplay';
+import CameraDisplay from './components/CameraDisplay';
 
 class Dashboard extends React.Component {
   render() {
     return (
       <section>
         <TempSensorDisplay {...this.props.content}/>
+        <CameraDisplay {...this.props.content}/>
       </section>
     );
   }

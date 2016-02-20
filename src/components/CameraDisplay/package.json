@@ -1,0 +1,6 @@
+{
+  "name": "CameraDisplay",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./CameraDisplay.js"
+}

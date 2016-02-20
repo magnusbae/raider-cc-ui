@@ -7,6 +7,9 @@ var FirebaseFetcher = {
   firebaseRef.child("temperatures").on("child_added", function(dataSnapshot) {
     FirebaseAction.firebaseData(dataSnapshot.val());
   });
+  firebaseRef.child("pictures").on("child_added", function(dataSnapshot) {
+    FirebaseAction.receivedCameraData(dataSnapshot.val());
+  });
 
   }
 } 

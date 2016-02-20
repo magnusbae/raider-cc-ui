@@ -8,5 +8,11 @@ export default {
       data: data,
     });
   },
+  receivedCameraData: function(data) {
+    Dispatcher.dispatch({
+      type: ActionTypes.RECEIVED_CAMERA_DATA,
+      data: data,
+    });
+  },
 
 };

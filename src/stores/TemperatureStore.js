@@ -6,6 +6,7 @@ import ActionTypes from '../constants/ActionTypes';
 var CHANGE_EVENT = 'change';
 
 var _temperatures = [];
+var _images = [];
 
 
 class TemperatureStore extends EventEmitter {
@@ -20,6 +21,14 @@ class TemperatureStore extends EventEmitter {
 
   getLastTemperature() {
     return _temperatures[_temperatures.length - 1];
+  }
+
+  getAllImages() {
+    return _images;
+  }
+
+  getLastImage() {
+    return _images[_images.length - 1];
   }
 
   emitChange() {
@@ -48,6 +57,10 @@ store.dispatchToken = Dispatcher.register(function(action) {
   switch (action.type) {
     case ActionTypes.RECEIVED_FIREBASE_DATA:
       _temperatures.push(action.data);
+      store.emitChange();
+      break;
+    case ActionTypes.RECEIVED_CAMERA_DATA:
+      _images.push(action.data);
       store.emitChange();
       break;
     default:
