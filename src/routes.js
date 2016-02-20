@@ -17,11 +17,12 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
+import TempSensorDisplay from './components/TempSensorDisplay';
 
 const router = new Router(on => {
   on('*', async (state, next) => {
     const component = await next();
-    return component && <App context={state.context}>{component}</App>;
+    return component && <TempSensorDisplay context={state.context}>{component}</TempSensorDisplay>;
   });
 
   on('/contact', async () => <ContactPage />);
