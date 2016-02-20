@@ -19,6 +19,16 @@ import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 import TempSensorDisplay from './components/TempSensorDisplay';
 
+class Dashboard extends React.Component {
+  render() {
+    return (
+      <section>
+        <TempSensorDisplay {...this.props.content}/>
+      </section>
+    );
+  }
+};
+
 const router = new Router(on => {
   on('*', async (state, next) => {
     const component = await next();
@@ -34,7 +44,7 @@ const router = new Router(on => {
   on('*', async (state) => {
     const response = await fetch(`/api/content?path=${state.path}`);
     const content = await response.json();
-    return response.ok && content && <TempSensorDisplay {...content} />;
+    return response.ok && content && <Dashboard content={content}/>;
   });
 
   on('error', (state, error) => state.statusCode === 404 ?
