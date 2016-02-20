@@ -24,10 +24,6 @@ class Footer extends Component {
           </div>
           <div className={s.ccCenter}>
             <span className={s.text}>© Raiders of the Lost Pi</span>
-            <span className={s.spacer}>·</span>
-            <Link className={s.link} to="/">Home</Link>
-            <span className={s.spacer}>·</span>
-            <Link className={s.link} to="/privacy">Privacy</Link>
           </div>
           <div className={s.ccRight}>
             Box

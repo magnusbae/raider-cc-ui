@@ -24,11 +24,16 @@ html {
       0deg,
       $grey-frame 1vh,
       $golden-icon
-
   );
   font-size: 1em; /* ~16px; */
   font-family: $font-family-base;
   line-height: 1.375; /* ~22px */
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0 0 200px;
 }
 
 /*

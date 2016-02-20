@@ -64,7 +64,7 @@ class BarometerDisplay extends Component {
     this.state = getBarometerState();
   }
 
-  componentWillMount() {
+  componentDidMount() {
     FirebaseStore.addChangeListener(this._onChange);
   }
 

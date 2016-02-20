@@ -64,7 +64,7 @@ class HumidityDisplay extends Component {
     this.state = getHumidityState();
   }
 
-  componentWillMount() {
+  componentDidMount() {
     FirebaseStore.addChangeListener(this._onChange);
   }
 

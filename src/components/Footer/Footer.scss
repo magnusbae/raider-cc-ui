@@ -12,6 +12,13 @@
 .root {
   background: $dark-red-background;
   color: #fff;
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 200px;
+  width: 100%;
 }
 
 .container {
@@ -27,8 +34,11 @@
   @extend .cc-frame-left;
   margin: 0px;
   padding: 0px;
-  width: 20%;
+  flex-basis: 134px;
+
   text-align: left;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .ccCenter {
@@ -37,6 +47,7 @@
   z-index: 2;
   margin-left: -18px;
   margin-right: -18px;
+  flex-grow: 2;
 }
 
 .ccRight {

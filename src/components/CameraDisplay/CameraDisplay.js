@@ -65,7 +65,7 @@ class CameraDisplay extends Component {
     this.state = getCameraState();
   }
 
-  componentWillMount() {
+  componentDidMount() {
     FirebaseStore.addChangeListener(this._onChange);
   }
 

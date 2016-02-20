@@ -64,7 +64,7 @@ class TempSensorDisplay extends Component {
     this.state = getTemperatureState()
   }
 
-  componentWillMount() {
+  componentDidMount() {
     FirebaseStore.addChangeListener(this._onChange);
   }
 

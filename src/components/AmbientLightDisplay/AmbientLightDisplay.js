@@ -64,7 +64,7 @@ class AmbientLightDisplay extends Component {
     this.state = getAmbientLightState();
   }
 
-  componentWillMount() {
+  componentDidMount() {
     FirebaseStore.addChangeListener(this._onChange);
   }
 
