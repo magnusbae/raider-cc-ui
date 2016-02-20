@@ -11,6 +11,7 @@ import React, { Component } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Footer.scss';
 import Link from '../Link';
+import CameraDisplay from '../CameraDisplay';
 
 class Footer extends Component {
 
@@ -19,7 +20,7 @@ class Footer extends Component {
       <div className={s.root}>
         <div className={s.container}>
           <div className={s.ccLeft}>
-            Flex
+            <CameraDisplay {...this.props.content}/>
           </div>
           <div className={s.ccCenter}>
             <span className={s.text}>© Raiders of the Lost Pi</span>

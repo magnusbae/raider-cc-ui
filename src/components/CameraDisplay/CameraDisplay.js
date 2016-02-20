@@ -76,7 +76,7 @@ class CameraDisplay extends Component {
 
   render() {
     return !this.props.error ? (
-      <figure className="raider-cc-camera-image">
+      <figure className={s.raiderCcCameraImage}>
         {renderLatestImage(this.state.image)}
       </figure>
     ) : (<p>An error occured</p>);
