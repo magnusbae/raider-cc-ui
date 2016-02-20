@@ -14,4 +14,5 @@ export default keyMirror({
   RECEIVED_CAMERA_DATA: null,
   RECEIVED_HUMIDITY_DATA: null,
   RECEIVED_BAROMETER_DATA: null,
+  RECEIVED_AMBIENT_LIGHT_DATA: null,
 });

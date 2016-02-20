@@ -16,6 +16,9 @@ var FirebaseFetcher = {
   firebaseRef.child("barometricpressure").on("child_added", function(dataSnapshot) {
     FirebaseAction.receivedBarometerData(dataSnapshot.val());
   });
+  firebaseRef.child("luxometer").on("child_added", function(dataSnapshot) {
+    FirebaseAction.receivedAmbientLightData(dataSnapshot.val());
+  });
 
   }
 } 

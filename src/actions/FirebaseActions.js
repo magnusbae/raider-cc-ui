@@ -26,5 +26,11 @@ export default {
       data: data,
     });
   },
+  receivedAmbientLightData: function(data) {
+    Dispatcher.dispatch({
+      type: ActionTypes.RECEIVED_AMBIENT_LIGHT_DATA,
+      data: data,
+    });
+  },
 
 };

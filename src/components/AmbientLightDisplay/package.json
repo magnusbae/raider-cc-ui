@@ -1,0 +1,6 @@
+{
+  "name": "AmbientLightDisplay",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AmbientLightDisplay.js"
+}
