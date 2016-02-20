@@ -19,11 +19,32 @@ import _ from 'lodash';
 
 function getTemperatureState() {
   return {
-    readings: TemperatureStore.getAll()
+    reading: TemperatureStore.getLastTemperature()
   };
 }
 
-var tempId = 0;
+var TemperatureReading = React.createClass({
+  render: function() {
+    return (
+      <span>{this.props.temp}</span>
+    );
+  }
+});
+
+function renderLatestTemperature(reading) {
+  if (reading && reading.ambientTemp) {
+    return (
+      <div className="raider-cc-temp-latest">
+        <span style={{fontWeight : 'bold'}}>Siste temperatur: </span>
+        <TemperatureReading temp={reading.ambientTemp} />
+      </div>
+    );
+  } else {
+    return (
+      <p>No data yet. Are we live?</p>
+    );
+  }
+}
 
 class TempSensorDisplay extends Component {
 
@@ -39,7 +60,6 @@ class TempSensorDisplay extends Component {
 
   constructor(props) {
     super(props);
-    tempId = 0;
     this._onChange = this._onChange.bind(this);
     this.state = getTemperatureState()
   }
@@ -58,18 +78,10 @@ class TempSensorDisplay extends Component {
   }
 
   render() {
-    var tempReadings = _.map(this.state.readings, function(reading){
-      tempId++;
-      return (<li key={tempId}>{reading.ambientTemp}</li>);
-    });
-    if(tempReadings.length === 0){
-      tempReadings.push(<p>No data yet. Are we live?</p>);
-    }
-
     return !this.props.error ? (
-      <ul>
-        {tempReadings}
-      </ul>
+      <div>
+        {renderLatestTemperature(this.state.reading)}
+      </div>
     ) : (<p>An error occured</p>);
   }
 

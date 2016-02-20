@@ -5,7 +5,7 @@ import ActionTypes from '../constants/ActionTypes';
 
 var CHANGE_EVENT = 'change';
 
-var _temperatures = []; // collection of todo items
+var _temperatures = [];
 
 
 class TemperatureStore extends EventEmitter {
@@ -14,8 +14,12 @@ class TemperatureStore extends EventEmitter {
    * Get the entire collection of TODOs.
    * @return {object}
    */
-  getAll() {
+  getAllTemperatures() {
     return _temperatures;
+  }
+
+  getLastTemperature() {
+    return _temperatures[_temperatures.length - 1];
   }
 
   emitChange() {
