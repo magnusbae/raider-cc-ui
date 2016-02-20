@@ -32,5 +32,11 @@ export default {
       data: data,
     });
   },
+  receivedDroneStatusData: function(data) {
+    Dispatcher.dispatch({
+      type: ActionTypes.RECEIVED_DRONE_STATUS_DATA,
+      data: data,
+    });
+  },
 
 };

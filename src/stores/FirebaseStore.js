@@ -10,6 +10,7 @@ var _images = [];
 var _humidities = [];
 var _barometricPressure = [];
 var _ambientLightReadings =[];
+var _droneStatuses = [];
 
 class FirebaseStore extends EventEmitter {
 
@@ -57,6 +58,14 @@ class FirebaseStore extends EventEmitter {
     return _ambientLightReadings[_ambientLightReadings.length - 1];
   }
 
+  getAllDroneStatusData() {
+    return _droneStatuses;
+  }
+
+  getLastDroneStatusData() {
+    return _droneStatuses[_droneStatuses.length - 1];
+  }
+
   emitChange() {
     this.emit(CHANGE_EVENT);
   }
@@ -99,6 +108,10 @@ store.dispatchToken = Dispatcher.register(function(action) {
       break;
     case ActionTypes.RECEIVED_AMBIENT_LIGHT_DATA:
       _ambientLightReadings.push(action.data);
+      store.emitChange();
+      break;
+    case ActionTypes.RECEIVED_DRONE_STATUS_DATA:
+      _droneStatuses.push(action.data);
       store.emitChange();
       break;
     default:
