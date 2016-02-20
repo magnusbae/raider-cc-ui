@@ -22,7 +22,7 @@ import TempSensorDisplay from './components/TempSensorDisplay';
 const router = new Router(on => {
   on('*', async (state, next) => {
     const component = await next();
-    return component && <TempSensorDisplay context={state.context}>{component}</TempSensorDisplay>;
+    return component && <App context={state.context}>{component}</App>;
   });
 
   on('/contact', async () => <ContactPage />);
@@ -34,7 +34,7 @@ const router = new Router(on => {
   on('*', async (state) => {
     const response = await fetch(`/api/content?path=${state.path}`);
     const content = await response.json();
-    return response.ok && content && <ContentPage {...content} />;
+    return response.ok && content && <TempSensorDisplay {...content} />;
   });
 
   on('error', (state, error) => state.statusCode === 404 ?
