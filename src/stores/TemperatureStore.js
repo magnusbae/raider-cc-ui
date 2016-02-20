@@ -8,6 +8,7 @@ var CHANGE_EVENT = 'change';
 var _temperatures = [];
 var _images = [];
 var _humidities = [];
+var _barometricPressure = [];
 
 class TemperatureStore extends EventEmitter {
 
@@ -37,6 +38,14 @@ class TemperatureStore extends EventEmitter {
 
   getLastHumidity() {
     return _humidities[_humidities.length - 1];
+  }
+
+  getAllBarometricPressures() {
+    return _barometricPressure;
+  }
+
+  getLastBarometricPressure() {
+    return _barometricPressure[_barometricPressure.length - 1];
   }
 
   emitChange() {
@@ -73,6 +82,10 @@ store.dispatchToken = Dispatcher.register(function(action) {
       break;
     case ActionTypes.RECEIVED_HUMIDITY_DATA:
       _humidities.push(action.data);
+      store.emitChange();
+      break;
+    case ActionTypes.RECEIVED_BAROMETER_DATA:
+      _barometricPressure.push(action.data);
       store.emitChange();
       break;
     default:

@@ -20,6 +20,7 @@ import ErrorPage from './components/ErrorPage';
 import TempSensorDisplay from './components/TempSensorDisplay';
 import CameraDisplay from './components/CameraDisplay';
 import HumidityDisplay from './components/HumidityDisplay';
+import BarometerDisplay from './components/BarometerDisplay';
 
 class Dashboard extends React.Component {
   render() {
@@ -27,6 +28,7 @@ class Dashboard extends React.Component {
       <section>
         <TempSensorDisplay {...this.props.content}/>
         <HumidityDisplay {...this.props.content}/>
+        <BarometerDisplay {...this.props.content}/>
         <CameraDisplay {...this.props.content}/>
       </section>
     );

@@ -20,5 +20,11 @@ export default {
       data: data,
     });
   },
+  receivedBarometerData: function(data) {
+    Dispatcher.dispatch({
+      type: ActionTypes.RECEIVED_BAROMETER_DATA,
+      data: data,
+    });
+  },
 
 };

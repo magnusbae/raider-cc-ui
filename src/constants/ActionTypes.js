@@ -13,4 +13,5 @@ export default keyMirror({
   RECEIVED_FIREBASE_DATA: null,
   RECEIVED_CAMERA_DATA: null,
   RECEIVED_HUMIDITY_DATA: null,
+  RECEIVED_BAROMETER_DATA: null,
 });

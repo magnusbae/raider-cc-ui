@@ -13,6 +13,9 @@ var FirebaseFetcher = {
   firebaseRef.child("humidity").on("child_added", function(dataSnapshot) {
     FirebaseAction.receivedHumidityData(dataSnapshot.val());
   });
+  firebaseRef.child("barometricpressure").on("child_added", function(dataSnapshot) {
+    FirebaseAction.receivedBarometerData(dataSnapshot.val());
+  });
 
   }
 } 
