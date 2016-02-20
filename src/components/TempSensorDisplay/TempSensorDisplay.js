@@ -14,12 +14,12 @@ import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
 
-import TemperatureStore from '../../stores/TemperatureStore';
+import FirebaseStore from '../../stores/FirebaseStore';
 import _ from 'lodash';
 
 function getTemperatureState() {
   return {
-    reading: TemperatureStore.getLastTemperature()
+    reading: FirebaseStore.getLastTemperature()
   };
 }
 
@@ -33,12 +33,12 @@ var TemperatureReading = React.createClass({
 
 function renderLatestTemperature(reading) {
   if (reading && reading.ambientTemp) {
-    return (
-      <div className="raider-cc-temp-latest">
-        <span style={{fontWeight : 'bold'}}>Siste temperatur: </span>
-        <TemperatureReading temp={reading.ambientTemp} />
-      </div>
-    );
+  return (
+    <div className="raider-cc-temp-latest">
+      <span style={{fontWeight : 'bold'}}>Siste temperatur: </span>
+      <TemperatureReading temp={reading.ambientTemp} />
+    </div>
+  );
   } else {
     return (
       <p>No data yet. Are we live?</p>
@@ -65,11 +65,11 @@ class TempSensorDisplay extends Component {
   }
 
   componentWillMount() {
-    TemperatureStore.addChangeListener(this._onChange);
+    FirebaseStore.addChangeListener(this._onChange);
   }
 
   componentWillUnmount() {
-    TemperatureStore.removeChangeListener(this._onChange);
+    FirebaseStore.removeChangeListener(this._onChange);
     this.removeCss();
   }
 

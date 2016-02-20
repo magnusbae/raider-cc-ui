@@ -11,7 +11,7 @@ var _humidities = [];
 var _barometricPressure = [];
 var _ambientLightReadings =[];
 
-class TemperatureStore extends EventEmitter {
+class FirebaseStore extends EventEmitter {
 
   /**
    * Get the entire collection of TODOs.
@@ -77,7 +77,7 @@ class TemperatureStore extends EventEmitter {
 
 };
 
-const store = new TemperatureStore();
+const store = new FirebaseStore();
 
 store.dispatchToken = Dispatcher.register(function(action) {
   switch (action.type) {

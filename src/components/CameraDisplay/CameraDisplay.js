@@ -14,7 +14,7 @@ import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
 
-import FirebaseStore from '../../stores/TemperatureStore';
+import FirebaseStore from '../../stores/FirebaseStore';
 import _ from 'lodash';
 
 function getCameraState() {

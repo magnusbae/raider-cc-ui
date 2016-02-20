@@ -27,11 +27,15 @@ class Dashboard extends React.Component {
   render() {
     return (
       <section>
-        <TempSensorDisplay {...this.props.content}/>
-        <HumidityDisplay {...this.props.content}/>
-        <BarometerDisplay {...this.props.content}/>
-        <AmbientLightDisplay {...this.props.content}/>
-        <CameraDisplay {...this.props.content}/>
+        <div class="col">
+          <TempSensorDisplay {...this.props.content}/>
+          <HumidityDisplay {...this.props.content}/>
+          <BarometerDisplay {...this.props.content}/>
+          <AmbientLightDisplay {...this.props.content}/>
+        </div>
+        <div class="col">
+          <CameraDisplay {...this.props.content}/>
+        </div>
       </section>
     );
   }
