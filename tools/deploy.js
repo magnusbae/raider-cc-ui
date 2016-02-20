@@ -14,9 +14,9 @@ import fetch from './lib/fetch';
 // TODO: Update deployment URL
 // For more information visit http://gitolite.com/deploy.html
 const getRemote = (slot) => ({
-  name: slot || 'production',
-  url: `https://example${slot ? `-${slot}` : ''}.scm.azurewebsites.net:443/example.git`,
-  website: `http://example${slot ? `-${slot}` : ''}.azurewebsites.net`,
+  name: slot || 'heroku',
+  url: `git@heroku.com:raider-cc.git`,
+  website: `http://raider-cc.herokuapp.com/`,
 });
 
 /**
