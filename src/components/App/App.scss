@@ -32,6 +32,12 @@ html {
   min-height: 100%;
 }
 
+.mainContent{
+  //margin-top: -52px;
+  //padding-top: 52px;
+  overflow-x: scroll;
+}
+
 body {
   margin: 0 0 200px;
 }

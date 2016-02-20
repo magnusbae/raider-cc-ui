@@ -16,4 +16,5 @@ export default keyMirror({
   RECEIVED_BAROMETER_DATA: null,
   RECEIVED_AMBIENT_LIGHT_DATA: null,
   RECEIVED_DRONE_STATUS_DATA: null,
+  RECEIVED_SOCKET_DATA: null,
 });
