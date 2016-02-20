@@ -26,7 +26,7 @@ import AmbientLightDisplay from './components/AmbientLightDisplay';
 class Dashboard extends React.Component {
   render() {
     return (
-      <section>
+      <section style={{maxWidth: "800px", margin: "10px auto 20px"}}>
         <div className="col">
           <TempSensorDisplay {...this.props.content}/>
           <HumidityDisplay {...this.props.content}/>

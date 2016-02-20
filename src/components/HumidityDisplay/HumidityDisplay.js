@@ -13,6 +13,7 @@ import s from './HumidityDisplay.scss';
 import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
+import ReactGauge from '../ReactGauge';
 
 import FirebaseStore from '../../stores/FirebaseStore';
 import _ from 'lodash';
@@ -23,21 +24,13 @@ function getHumidityState() {
   };
 }
 
-var HumidityReading = React.createClass({
-  render: function() {
-    return (
-      <span>{this.props.humidity}</span>
-    );
-  }
-});
-
 function renderLatestHumidity(humidity) {
   if (humidity && humidity.humidity) {
     return (
-      <div className="raider-cc-humidity-latest">
-      <span style={{fontWeight : 'bold'}}>Siste luftfuktighet: </span>
-      <HumidityReading humidity={humidity.humidity} />
-    </div>
+      <div className="raider-cc-humidity-latest" style={{width: "45%", float: "left"}}>
+        <h2>Luftfuktighet</h2>
+        <ReactGauge width="200" height="100" min="0" max="100" value={humidity.humidity} unit="%"/>
+      </div>
     );
   } else {
     return (

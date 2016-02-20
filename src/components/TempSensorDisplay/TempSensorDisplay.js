@@ -13,6 +13,7 @@ import s from './TempSensorDisplay.scss';
 import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
+import ReactGauge from '../ReactGauge';
 
 import FirebaseStore from '../../stores/FirebaseStore';
 import _ from 'lodash';
@@ -23,20 +24,12 @@ function getTemperatureState() {
   };
 }
 
-var TemperatureReading = React.createClass({
-  render: function() {
-    return (
-      <span>{this.props.temp}</span>
-    );
-  }
-});
-
 function renderLatestTemperature(reading) {
   if (reading && reading.ambientTemp) {
   return (
-    <div className="raider-cc-temp-latest">
-      <span style={{fontWeight : 'bold'}}>Siste temperatur: </span>
-      <TemperatureReading temp={reading.ambientTemp} />
+    <div className="raider-cc-temp-latest" style={{width: "45%", float: "left"}}>
+      <h2>Siste temperatur</h2>
+      <ReactGauge width="200" height="100" min="-20" max="100" value={reading.ambientTemp} unit="deg (C)"/>
     </div>
   );
   } else {

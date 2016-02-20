@@ -13,6 +13,7 @@ import s from './BarometerDisplay.scss';
 import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
+import ReactGauge from '../ReactGauge';
 
 import FirebaseStore from '../../stores/FirebaseStore';
 import _ from 'lodash';
@@ -23,20 +24,12 @@ function getBarometerState() {
   };
 }
 
-var BarometerReading = React.createClass({
-  render: function() {
-    return (
-      <span>{this.props.barometricPressure}</span>
-    );
-  }
-});
-
 function renderLatestBarometer(barometer) {
   if (barometer && barometer.pressure) {
     return (
-      <div className="raider-cc-barometer-pressure-latest">
-      <span style={{fontWeight : 'bold'}}>Siste lufttrykk: </span>
-      <BarometerReading barometricPressure={barometer.pressure} />
+      <div className="raider-cc-barometer-pressure-latest" style={{width: "45%", float: "left"}}>
+      <h2>Siste lufttrykk</h2>
+      <ReactGauge width="200" height="100" min="0" max="100" value={barometer.pressure} unit="hPa"/>
     </div>
     );
   } else {
