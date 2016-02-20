@@ -22,6 +22,7 @@ import CameraDisplay from './components/CameraDisplay';
 import HumidityDisplay from './components/HumidityDisplay';
 import BarometerDisplay from './components/BarometerDisplay';
 import AmbientLightDisplay from './components/AmbientLightDisplay';
+import DroneStatusDisplay from './components/DroneStatusDisplay';
 
 class Dashboard extends React.Component {
   render() {
@@ -32,6 +33,7 @@ class Dashboard extends React.Component {
           <HumidityDisplay {...this.props.content}/>
           <BarometerDisplay {...this.props.content}/>
           <AmbientLightDisplay {...this.props.content}/>
+          <DroneStatusDisplay {...this.props.content}/>
         </div>
       </section>
     );

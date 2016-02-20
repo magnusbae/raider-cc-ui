@@ -19,6 +19,9 @@ var FirebaseFetcher = {
   firebaseRef.child("luxometer").limitToLast(1).on("child_added", function(dataSnapshot) {
     FirebaseAction.receivedAmbientLightData(dataSnapshot.val());
   });
+  firebaseRef.child("droneStatus").limitToLast(1).on("child_added", function(dataSnapshot) {
+    FirebaseAction.receivedDroneStatusData(dataSnapshot.val());
+  });
 
   }
 };
